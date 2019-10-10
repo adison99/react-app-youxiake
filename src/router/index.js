@@ -1,0 +1,109 @@
+import{
+    Home,
+    Order,
+    Mine,
+    Login,
+    Register,
+    Search,
+    InCountry,
+    IndexCity
+} from "@pages"
+
+export const layoutRoutes=[
+    {
+        key:"/home",
+        path:"/home",
+        name:"首页",
+        icon:"a",
+        component:Home,
+        exact:true,
+        meta:{
+            requireAuth:false,
+            flag:true
+        },
+    },
+    {
+        key:"/order",
+        path:"/order",
+        name:"订单",
+        icon:"b",
+        component:Order,
+        exact:true,
+        meta:{
+            requireAuth:true,
+            flag:true
+        }
+    },
+    {
+        key:"/mine",
+        path:"/mine",
+        name:"个人中心",
+        icon:"c",
+        component:Mine,
+        exact:true,
+        meta:{
+            requireAuth:false,
+            flag:true
+        }
+    }
+]
+
+export const noLayoutRoutes=[
+    {
+        key:"/login",
+        path:"/login",
+        name:"登录",
+        icon:"",
+        component:Login,
+        exact:true,
+        meta:{
+            requireAuth:false
+        }
+    },
+    {
+        key:"/register",
+        path:"/register",
+        name:"注册",
+        icon:"",
+        component:Register,
+        exact:true,
+        meta:{
+            requireAuth:false
+        }
+    },
+    {
+        key:"/search",
+        path:"/search",
+        name:"搜索",
+        icon:"",
+        component:Search,
+        exact:true,
+        meta:{
+            requireAuth:false
+        }
+    },
+    {
+        key:"/inCountry",
+        path:"/inCountry",
+        name:"国内",
+        icon:"",
+        component:InCountry,
+        exact:true,
+        meta:{
+            requireAuth:false
+        }
+    },
+    {
+        key:"/city",
+        path:"/city",
+        name:"城市列表",
+        icon:"",
+        component:IndexCity,
+        exact:true,
+        meta:{
+            requireAuth:false
+        }
+    },
+]
+
+export const baseConfigRoutes=layoutRoutes.concat(noLayoutRoutes)
